@@ -1,0 +1,33 @@
+<!-- <mat-spinner *ngIf="loading"></mat-spinner> -->
+
+<div class="d-flex flex-column">
+  <mat-toolbar
+    mode="top"
+    class="position-fixed w-100 d-flex justify-content-between"
+    style="z-index: 99 !important; height: 100px !important"
+  >
+    <app-toolbar></app-toolbar>
+    <app-sidebar
+ 
+  ></app-sidebar>
+  </mat-toolbar>
+
+  <router-outlet style="padding-top: 110px"></router-outlet>
+</div>
+<!--
+<div class="container-fluid m-0 p-0">
+  <mat-sidenav-container>
+    <mat-sidenav
+      #sidenav
+      mode="side"
+      style="margin-top: 80px !important"
+      class="position-fixed m-2 rounded"
+      opened
+    >
+      <app-sidebar></app-sidebar>
+    </mat-sidenav>
+    <mat-sidenav-content class="p-4 pt-5">
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div> -->

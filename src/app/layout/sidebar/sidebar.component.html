@@ -1,0 +1,42 @@
+<aside style="background-color: #f5f5f5" id="sidenav" aria-label="Sidebar">
+  <div
+    class="py-2 px-4 text-dark"
+    style="overflow: auto; scroll-behavior: smooth"
+  >
+    <ul class="list-unstyled d-flex">
+      <li class="pb-2 mx-4 text-center text-dark">
+        <a
+          routerLink="/dashboard/users-list"
+          routerLinkActive="active-link"
+          class="d-flex flex-column flex-lg-row items-center p-1 text-dark text-decoration-none fs-5 cursor-pointer navbar-item text-center"
+        >
+          <span class="mx-2"> Home</span>
+        </a>
+      </li>
+      <li class="pb-2 mx-4 text-center text-dark">
+        <a
+         
+          (click)="showSearch()"
+          class="d-flex flex-column flex-lg-row items-center p-1 text-dark text-decoration-none cursor-pointer navbar-item text-center fs-5"
+        >
+
+          <span class="mx-2 me-2"> search</span>
+        </a>
+      </li>
+ 
+      <li class="pb-2 mx-4 text-center text-dark">
+        <a
+          routerLink="/dashboard/wish-list"
+          routerLinkActive="active-link"
+          class="d-flex flex-column flex-lg-row items-center p-1 text-dark text-decoration-none cursor-pointer navbar-item text-center fs-5"
+        >
+
+          <span class="mx-2 me-2"> Wish list</span>
+        </a>
+      </li>
+ 
+
+
+    </ul>
+  </div>
+</aside>

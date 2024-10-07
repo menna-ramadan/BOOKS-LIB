@@ -1,0 +1,50 @@
+<div id="content" class="py-2 px-3  w-100" style="min-height: 100vh; margin-top: 40px">
+  <h5 class="card-title page-title font-weight-bold">{{ bookData.volumeInfo.title }}</h5>
+  
+  <div class="book p-4 d-lg-flex gap-4 border rounded shadow-sm" style="background-color: #f9f9f9;">
+    <img 
+      [src]="bookData.volumeInfo.thumbnail != null ? bookData.volumeInfo.thumbnail : 'assets/images/pexels-photo-1051073.jpeg'" 
+      class="rounded" 
+      alt="Book Cover" 
+    />
+    
+    <div class="card-body">
+      <h5 class="card-title font-weight-bold">{{ bookData.volumeInfo.title }}</h5>
+      <p class="card-text mb-0 text-muted">Published: {{ bookData.volumeInfo.publishedDate }}</p>
+      <p class="card-text text-muted mb-0">Author(s): {{ bookData.volumeInfo.authors?.join(', ') || 'Unknown Author' }}</p>
+      <p class="card-text text-muted mb-0">Edition Count: {{ bookData.volumeInfo.ediCout }}</p>
+      <p class="card-text text-muted">No of pages: {{ bookData.volumeInfo.noPage }}</p>
+      
+      <div class="reviews-section mt-3">
+        <h3 class="font-weight-bold">Reviews:</h3>
+        <div *ngIf="bookData.volumeInfo.reviews?.length > 0; else noReviews">
+          <div *ngFor="let review of bookData.volumeInfo.reviews" class="mb-2">
+            <p class="mb-0"><strong>{{ review.reviewer }}</strong></p>
+            <p class="mb-0">Rating: {{ review.rating }} / 5</p>
+            <p class="text-muted">{{ review.comment }}</p>
+          </div>
+        </div>
+        <ng-template #noReviews>
+          <p class="text-muted">No reviews available.</p>
+        </ng-template>
+      </div>
+      
+      <div class="d-flex justify-content-center gap-2 mt-3">
+        <button 
+          class="btn btn-link" 
+          [ngClass]="isInWishlist ? 'text-danger' : 'text-success'" 
+          (click)="toggleWishlist()">
+          {{ isInWishlist ? 'Remove from Wishlist' : 'Add to Wishlist' }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Separate button for the wishlist functionality -->
+<button 
+  class="btn btn-link" 
+  [ngClass]="isInWishlist ? 'text-danger' : 'text-success'" 
+  (click)="toggleWishlist()">
+  {{ isInWishlist ? 'Remove from Wishlist' : 'Add to Wishlist' }}
+</button>

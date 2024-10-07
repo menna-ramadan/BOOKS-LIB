@@ -1,0 +1,48 @@
+.filter_flag {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: red;
+  color: #fff;
+}
+
+::ng-deep .mat-tab-label-active {
+  background: blue !important;
+}
+::ng-deep .mat-ink-bar {
+  visibility: hidden !important;
+}
+::ng-deep .mat-tab-header {
+  border-bottom: none !important;
+}
+
+.book {
+  /* width: 350px; */
+gap: 15px;
+  border-radius: 12px;
+  background-color: #e9e8e8;
+  margin-bottom: 15px;
+}
+img{
+  height: 150px;
+  width: 130px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: auto;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.card-text {
+  color: #777;
+}
+.card-body{
+  margin: auto;
+
+}
